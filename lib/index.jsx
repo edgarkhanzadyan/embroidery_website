@@ -10,4 +10,4 @@ class App extends Component {
 		)
 	}
 }
-render(<App />, document.querySelector("#root"))
+render(<App />, document.getElementById('root'))
