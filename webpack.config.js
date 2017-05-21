@@ -1,5 +1,10 @@
 const webpack = require('webpack');
 module.exports = {
+	watch: true,
+	watchOptions: {
+		ignored: /node_modules/
+	},
+	devtool: 'eval',
 	entry: [
     'react-hot-loader/patch',
 		'webpack-hot-middleware/client',

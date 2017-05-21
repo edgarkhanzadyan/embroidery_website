@@ -37,7 +37,7 @@
   "scripts": {
     "start-not-hot": "nodemon backend/server.js",
     "start-hot": "node backend/server.js",
-    "webpack": "webpack --watch",
+    "webpack": "webpack",
     "babel-watch": "babel lib/*.jsx backend/*.jsx --watch --out-dir ."
   }
 }
