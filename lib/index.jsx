@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import style from './style.css';
+import styled from 'styled-components';
+const Text = styled.p`
+	font-size: 50px;
+`
 class App extends Component {
 	render(){
 		return(
 			<div>
-				<p className={style.some}>hi</p>
+				<Text>hi</Text>
 			</div>
 		)
 	}
