@@ -10,6 +10,7 @@
     "express": "^4.15.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
     "styled-components": "^1.4.6",
     "webpack": "^2.5.1"
   },
@@ -23,16 +24,16 @@
     ]
   },
   "devDependencies": {
-    "webpack-dev-middleware": "^1.10.2",
-    "webpack-hot-middleware": "^2.18.0",
-    "react-hot-loader": "next",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
     "nodemon": "^1.11.0",
-    "style-loader": "^0.17.0"
+    "react-hot-loader": "next",
+    "style-loader": "^0.17.0",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "^2.18.0"
   },
   "scripts": {
     "start-not-hot": "nodemon backend/server.js",
