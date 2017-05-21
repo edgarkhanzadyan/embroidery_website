@@ -1,11 +1,12 @@
 {
   "name": "embroidery_website",
   "version": "1.0.0",
-  "description": "this is a web-site for my mom",
+  "description": "",
   "repository": "https://github.com/edgarkhanzadyan/embroidery_website",
   "author": "Edgar Khanzadian <edgar.khanzadian@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-cli": "^6.24.1",
     "express": "^4.15.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -16,9 +17,15 @@
     "presets": [
       "env",
       "react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
     ]
   },
   "devDependencies": {
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "^2.18.0",
+    "react-hot-loader": "next",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
@@ -28,7 +35,9 @@
     "style-loader": "^0.17.0"
   },
   "scripts": {
-    "start": "nodemon backend/server.js",
-    "webpack": "webpack --watch"
+    "start-not-hot": "nodemon backend/server.js",
+    "start-hot": "node backend/server.js",
+    "webpack": "webpack --watch",
+    "babel-watch": "babel lib/*.jsx backend/*.jsx --watch --out-dir ."
   }
 }

@@ -1,2 +1,6 @@
 node_modules/
 public/bundle.js
+public/*hot-update.js
+public/*hot-update.json
+lib/*.js
+backend/*.js

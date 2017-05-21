@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import styled from 'styled-components';
-const Text = styled.p`
-	font-size: 50px;
-`
-class App extends Component {
-	render(){
-		return(
-			<div>
-				<Text>hi</Text>
-			</div>
-		)
-	}
+import App from './main';
+import { AppContainer } from 'react-hot-loader'
+
+render(
+	<AppContainer>
+		<App/>
+	</AppContainer>,
+	document.getElementById('root'));
+
+if(module.hot) {
+    module.hot.accept('./main', () => {
+        const NewApp = require('./main').default;
+        render(
+				<AppContainer>
+					<NewApp/>
+				</AppContainer>,
+				document.getElementById('root'));
+    });
 }
-render(<App />, document.getElementById('root'))
