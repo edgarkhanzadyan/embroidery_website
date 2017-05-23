@@ -3,7 +3,7 @@ const app = express();
 import App from '../lib/main';
 const React = require('react');
 const renderToString = require('react-dom/server').renderToString;
-
+import { StaticRouter } from 'react-router';
 import webpack from 'webpack';
 const config = require('../webpack.config');
 const compiler = webpack(config);
@@ -14,6 +14,14 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 app.use(express.static('public'));
 app.get('/', (req, res) => {
+	const context = {};
+	const rendered = renderToString(
+		<StaticRouter
+	    location={req.url}
+	    context={context}>
+	    <App/>
+	  </StaticRouter>
+	);
 		res.send(`
 			<!doctype html>
 			<meta charset="utf-8"/>
@@ -31,7 +39,7 @@ app.get('/', (req, res) => {
 			</head>
 			<body>
 				<p>hey</p>
-			  <div id='root'>${renderToString(<App />)}</div>
+			  <div id='root'>${rendered}</div>
 			  <script src='bundle.js'></script>
 			</body>
 		`);
